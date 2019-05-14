@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>mdas_dbw</name>
+    <version>1.0.0</version>
+    <description>
+        Drive-by-wire interface for MDAS DBW conversion
+    </description>
+
+    <license>GPLv3</license>
+    <author email="bjsmyth@umich.edu">Brandon Smyth</author>
+    <maintainer email="bjsmyth@umich.edu">Brandon Smyth</maintainer>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <exec_depend>mdas_dbw_can</exec_depend>
+    <exec_depend>mdas_dbw_msgs</exec_depend>
+
+    <export>
+    <metapackage/>
+    </export>
+
+</package>

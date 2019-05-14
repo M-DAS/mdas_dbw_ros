@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="2">
+    <name>mdas_dbw_msgs</name>
+    <version>1.0.0</version>
+    <description>
+        Drive-by-wire messages for the MDAS drive-by-wire conversion
+    </description>
+
+    <license>GPLv3</license>
+    <author email="bjsmyth@umich.edu">Brandon Smyth</author>
+    <maintainer email="bjsmyth@umich.edu">Brandon Smyth</maintainer>
+
+    <buildtool_depend>catkin</buildtool_depend>
+
+    <depend>std_msgs</depend>
+
+    <build_depend>message_generation</build_depend>
+    <exec_depend>message_runtime</exec_depend>
+</package>
