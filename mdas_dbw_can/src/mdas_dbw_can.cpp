@@ -61,7 +61,9 @@ int main(int argc, char **argv)
   feedback_id = std::stoi(feedback_id_str, nullptr, 16);
 
   ros::Publisher chatter_pub = n.advertise<std_msgs::String>("chatter", 1000);
-  throttlePub = n.advertise<mdas_dbw_msgs::ThrottleReport>("mdas_dbw/throttle_feedback", 2);
+  throttlePub = n.advertise<mdas_dbw_msgs::ThrottleReport>("mdas_dbw/feedback/throttle", 10);
+  brakePub = n.advertise<mdas_dbw_msgs::BrakeReport>("mdas_dbw/feedback/brake", 10);
+  steeringPub = n.advertise<mdas_dbw_msgs::SteeringReport>("mdas_dbw/feedback/steering", 10);
 
   ros::Subscriber feedbackSub = n.subscribe("received_messages", 100, receivedMessagesCallback);
 

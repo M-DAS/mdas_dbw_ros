@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>mdas_dbw_joystick_demo</name>
+  <version>1.0.0</version>
+  <description>
+    Joystick demo for MDAS DBW Node
+  </description>
+
+  <author email="bjsmyth@umich.edu">Brandon Smyth</author>
+
+  <maintainer email="bjsmyth@umich.edu">Brandon Smyth</maintainer>
+
+  <license>GPLv3</license>
+
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <depend>std_msgs</depend>
+  <depend>mdas_dbw_msgs</depend>
+  <depend>joy</depend>
+  <depend>rospy</depend>
+
+</package>
