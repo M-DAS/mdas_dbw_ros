@@ -6,8 +6,6 @@ from sensor_msgs.msg import Joy
 
 class JoystickDemo:
 
-    #publishers = {}
-
     def __init__(self):
         rospy.init_node('joystick_demo')
         rospy.sleep(0.5)

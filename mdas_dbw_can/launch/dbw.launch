@@ -1,4 +1,21 @@
 <?xml version="1.0"?>
 <launch>
+    <arg name="can_dev" default="can0" />
+    <arg name="steering_id" default="0x19DB0000" />
+    <arg name="brake_id" default="0x18DB0000" />
+    <arg name="throttle_id" default="0x1ADB0000" />
+    <arg name="feedback_id" default="0x1CDBFFFF" />
 
+    <!-- socketcan bridge node -->
+    <node pkg="socketcan_bridge" type="socketcan_bridge_node" name="socketcan_bridge_node">
+        <param name="can_device" value="$(arg can_dev)" />
+    </node>
+
+    <!-- drive-by-wire node -->
+    <node pkg="mdas_dbw_can" type="mdas_dbw_can_node" name="mdas_dbw_can_node">
+        <param name="throttle_can_id" value="$(arg throttle_id)" />
+        <param name="steering_can_id" value="$(arg steering_id)" />
+        <param name="brake_can_id" value="$(arg brake_id)" />
+        <param name="feedback_can_id" value="$(arg feedback_id)" />
+    </node>
 </launch>

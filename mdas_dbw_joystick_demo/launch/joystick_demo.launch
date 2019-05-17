@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="joy_dev" default="/dev/input/js0" />
+    <arg name="can_dev" default="can0" />
+
+    <!-- joy node -->
+    <node pkg="joy" type="joy_node" name="joy_node">
+        <param name="dev" value="$(arg joy_dev)" />
+    </node>
+
+    <!-- joystick demo node -->
+    <node pkg="mdas_dbw_joystick_demo" type="joystick_demo" name="joystick_demo" />
+
+    <!-- launch for drive-by-wire node -->
+    <include file="$(find mdas_dbw_can)/launch/dbw.launch">
+        <arg name="can_dev" value="$(arg can_dev)" />
+    </include>
+</launch>
