@@ -12,9 +12,9 @@
 
     <buildtool_depend>catkin</buildtool_depend>
 
+    <exec_depend>mdas_dbw_msgs</exec_depend>
     <exec_depend>mdas_dbw_can</exec_depend>
     <exec_depend>mdas_dbw_joystick_demo</exec_depend>
-    <exec_depend>mdas_dbw_msgs</exec_depend>
     <build_export_depend>mdas_dbw_joystick_demo</build_export_depend>
 
     <export>

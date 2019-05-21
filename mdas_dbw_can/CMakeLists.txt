@@ -29,17 +29,24 @@ include_directories(
   ${catkin_INCLUDE_DIRS}
 )
 
-add_executable(${PROJECT_NAME}_node src/mdas_dbw_can.cpp)
+add_library(${PROJECT_NAME}
+  src/MdasDbwNode.cpp
+)
+
+add_dependencies(${PROJECT_NAME} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(${PROJECT_NAME} ${catkin_LIBRARIES})
+
+add_executable(${PROJECT_NAME}_node src/node.cpp)
 
 add_dependencies(${PROJECT_NAME}_node ${catkin_EXPORTED_TARGETS})
-target_link_libraries(${PROJECT_NAME}_node ${catkin_LIBRARIES})
+target_link_libraries(${PROJECT_NAME}_node ${PROJECT_NAME} ${catkin_LIBRARIES})
 
 
 #############
 ## Install ##
 #############
 
-install(TARGETS ${PROJECT_NAME}_node
+install(TARGETS ${PROJECT_NAME} ${PROJECT_NAME}_node
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
