@@ -180,7 +180,7 @@ namespace mdas_dbw_can
         // Check if any enable states changed to disabled
         // then stop ECU commands
         if((brakeState == true) && (brakeCmd.enable == false)) {
-            msg = buildSteeringMsg(0);
+            msg = buildBrakeMsg(0);
             canSender.publish(msg);
         }
 
