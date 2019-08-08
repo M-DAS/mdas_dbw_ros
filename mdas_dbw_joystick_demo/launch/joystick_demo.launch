@@ -2,14 +2,16 @@
 <launch>
     <arg name="joy_dev" default="/dev/input/js0" />
     <arg name="can_dev" default="can0" />
+    <arg name="autorepeat_rate" default="30.0" />
 
     <!-- joy node -->
-    <node pkg="joy" type="joy_node" name="joy_node">
+    <node pkg="joy" type="joy_node" name="joy_node" output="screen">
         <param name="dev" value="$(arg joy_dev)" />
+        <param name="autorepeat_rate" value="$(arg joy_dev)" type="double" />
     </node>
 
     <!-- joystick demo node -->
-    <node pkg="mdas_dbw_joystick_demo" type="joystick_demo" name="joystick_demo" />
+    <node pkg="mdas_dbw_joystick_demo" type="joystick_demo" name="joystick_demo" output="screen"/>
 
     <!-- launch for drive-by-wire node -->
     <include file="$(find mdas_dbw_can)/launch/dbw.launch">

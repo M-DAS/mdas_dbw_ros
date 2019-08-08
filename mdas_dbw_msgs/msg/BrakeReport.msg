@@ -8,4 +8,4 @@ bool enabled # Enabled
 bool override # Driver override
 
 # Maximum values
-uint8 THROTTLE_MAX=100 # Percent, max throttle
+uint8 BRAKE_MAX=100 # Percent, max brake
